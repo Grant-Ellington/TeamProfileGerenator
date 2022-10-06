@@ -114,7 +114,7 @@ const createManagerCard = (managerData) => {
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${managerData.managerName}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
       <p class="card-text">${managerData.managerId}</p>
       <a href="${managerData.managerEmail}" class="card-link">Email${managerData.managerEmail}</a>
       <a href="#" class="card-text">${managerData.managerOfficeNum}</a>
@@ -127,7 +127,7 @@ const createInternCard = (internData) => {
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${internData.internName}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
       <p class="card-text">${internData.internId}</p>
       <a href="${internData.internEmail}" class="card-link">Email${internData.internEmail}</a>
       <a href="#" class="card-text">${internData.internGit}</a>
@@ -139,7 +139,7 @@ const createEngineerCard = (engineerData) => {
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${engineerData.engineerName}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
       <p class="card-text">${engineerData.engineerId}</p>
       <a href="${engineerData.engineerEmail}" class="card-link">Email${engineerData.engineerEmail}</a>
       <a href="#" class="card-text">${engineerData.engineerGit}</a>
@@ -207,42 +207,51 @@ function createInternHTML () {
 //writeFile
 // Wrrite file will take the question prompts and add to the array 
 //init section
-
-function generateFile() {
-    console.log(cards)
-}
-
-function createFile (cards) { 
-    console.log(cards)
-const fileHTML = 
-
-`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Generator</title>
-    <link rel = stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel = "stylesheet" type = "text/css" href="./style.css">
-</head>
-<body>
-    <div class="navbar-expand-sm">
-        <h1>Team Generator</h1>
-    <div class="conatianer-sm">
-        ${cards[0]}
-        ${cards[1]}
-        ${cards[2]}
-        ${cards[3]}
-        ${cards[4]}
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-</html>`
-
+// const fileHTML = `<!DOCTYPE html>
+// <html lang="en">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title>Team Generator</title>
+//     <link rel = stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+//     <link rel = "stylesheet" type = "text/css" href="./style.css">
+// </head>
+// <body>
+//     <div class="navbar-expand-sm">
+//         <h1>Team Generator</h1>
+//     </div>
+//     <div class="conatianer-sm">
+//         ${cards}
+//     </div>
+//     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+// </body>
+// </html>`
+function createFile () { 
+    const fileHTML = `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Generator</title>
+        <link rel = stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel = "stylesheet" type = "text/css" href="./style.css">
+    </head>
+    <body>
+        <div class="navbar-expand-sm">
+            <h1>Team Generator</h1>
+        </div>
+        <div class="conatianer-sm">
+            ${cards}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    </body>
+    </html>`
+//console.log(cards)
 console.log(fileHTML);
-
+ fs.writeFile('index.html', fileHTML, (err) =>
+    err ? console.log(err) :console.log('success'))
 }
 function init() {
     //console.log(card)
