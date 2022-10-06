@@ -1,0 +1,17 @@
+.navbar-expand-sm{
+    background-color: blue;
+    color: white;
+    
+}
+
+h1 {
+    display:flex;
+    justify-content: center;
+}
+
+.container-sm{
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    justify-content: flex-start;
+}
