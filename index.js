@@ -250,7 +250,7 @@ function createFile () {
     </html>`
 //console.log(cards)
 console.log(fileHTML);
- fs.writeFile('index.html', fileHTML, (err) =>
+ fs.writeFile('dist/index.html', fileHTML, (err) =>
     err ? console.log(err) :console.log('success'))
 }
 function init() {
