@@ -1,22 +1,29 @@
 
 
-const createEngineerCard = require('../index.js');
 const Engineer = require('../lib/Engineer')
 
-test("should output HTML block", () => {
-    const engineerData =  new Engineer('Grant', '1234', 'gellingtonem6@gmail.com', '1234', 'Intern')
-    const test = createEngineerCard(engineerData)
-
-    const results = `
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Grant</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
-      <p class="card-text">1234</p>
-      <a href="mailto:gellingtonem6@gmail.com">gellingtonem6@gmail.com</a>
-      <a href="#" class="card-text">1234</a>
-    </div>`
-    
-    expect(test).toBe(results)
+test("Can set enginner name via constructor", () => {
+    let e =  new Engineer('Grant', '1234', 'test@test.com', 'name-name', 'Intern')
+    let results = 'Grant'
+    expect(e.engineerName).toBe(results)
+});
+test("Can set engineer id number via constructor", () => {
+  let e =  new Engineer('Grant', '1234', 'test@test.com', 'name-name', 'Intern')
+  let results = '1234'
+  expect(e.engineerId).toBe(results)
 })
-
+test("Can set engineer email via constructor", () => {
+  let e =  new Engineer('Grant', '1234', 'test@test.com', 'name-name', 'Intern')
+  let results = 'test@test.com'
+  expect(e.engineerId).toBe(results)
+})
+test("Can set engineer Git via constructor", () => {
+  let e =  new Engineer('Grant', '1234', 'test@test.com', 'name-name', 'Intern')
+  let results = 'name-name'
+  expect(e.engineerId).toBe(results)
+})
+test("Can set engineer choice via constructor", () => {
+  let e =  new Engineer('Grant', '1234', 'test@test.com', 'name-name', 'Intern')
+  let results = 'Intern'
+  expect(e.engineerId).toBe(results)
+})
