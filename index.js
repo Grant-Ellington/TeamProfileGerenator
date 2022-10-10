@@ -116,7 +116,7 @@ const createManagerCard = (managerData) => {
       <h5 class="card-title">${managerData.managerName}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
       <p class="card-text">${managerData.managerId}</p>
-      <a href="${managerData.managerEmail}" class="card-link">Email${managerData.managerEmail}</a>
+      <a href=""mailto:${managerData.managerEmail}?subject = Feedback&body = Message">${managerData.managerEmail}</a>
       <a href="#" class="card-text">${managerData.managerOfficeNum}</a>
     </div>`
     cards.push(managerCard);
@@ -129,7 +129,7 @@ const createInternCard = (internData) => {
       <h5 class="card-title">${internData.internName}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
       <p class="card-text">${internData.internId}</p>
-      <a href="${internData.internEmail}" class="card-link">Email${internData.internEmail}</a>
+      <a href=""mailto:${internData.internEmail}">${internData.internEmail}</a>
       <a href="#" class="card-text">${internData.internGit}</a>
     </div>`
     cards.push(internCard);
@@ -141,7 +141,7 @@ const createEngineerCard = (engineerData) => {
       <h5 class="card-title">${engineerData.engineerName}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
       <p class="card-text">${engineerData.engineerId}</p>
-      <a href="${engineerData.engineerEmail}" class="card-link">Email${engineerData.engineerEmail}</a>
+      <a href="mailto:${engineerData.engineerEmail}">${engineerData.engineerEmail}</a>
       <a href="#" class="card-text">${engineerData.engineerGit}</a>
     </div>`
     cards.push(engineerCard);
@@ -153,6 +153,7 @@ function createManagerHTML () {
         .prompt(managerQuestions)
         .then((answers) => {
             const managerData = answers;
+            console.log(managerData)
             createManagerCard(managerData);
 
             if(managerData.managerChoices === 'Manager') {
@@ -165,6 +166,7 @@ function createManagerHTML () {
                 createFile()
             }
         });
+
 };
 function createEngineerHTML () {
     inquirer
@@ -177,7 +179,7 @@ function createEngineerHTML () {
             createManagerHTML()
         } else if(engineerData.engineerChoices === 'Engineer') {
             createEngineerHTML()
-        }else if (engineerData.engineerChoice === 'Intern') {
+        }else if (engineerData.engineerChoices === 'Intern') {
             createInternHTML()
         } else {
             createFile()
@@ -203,31 +205,9 @@ function createInternHTML () {
             }
         });
 }
-//HTMLGeneration
-//writeFile
-// Wrrite file will take the question prompts and add to the array 
-//init section
-// const fileHTML = `<!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>Team Generator</title>
-//     <link rel = stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-//     <link rel = "stylesheet" type = "text/css" href="./style.css">
-// </head>
-// <body>
-//     <div class="navbar-expand-sm">
-//         <h1>Team Generator</h1>
-//     </div>
-//     <div class="conatianer-sm">
-//         ${cards}
-//     </div>
-//     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-// </body>
-// </html>`
+
 function createFile () { 
+    
     const fileHTML = `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -248,15 +228,21 @@ function createFile () {
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
     </html>`
-//console.log(cards)
-console.log(fileHTML);
- fs.writeFile('dist/index.html', fileHTML, (err) =>
+    fs.writeFile('dist/index.html', fileHTML, (err) =>
     err ? console.log(err) :console.log('success'))
 }
+
+module.export = createFile
 function init() {
     //console.log(card)
 
     createManagerHTML()
 };
+
+module.exports = {
+    createEngineerHTML,
+    createInternHTML,
+    createManagerHTML,
+}
 
 init();
