@@ -135,7 +135,8 @@ const createInternCard = (internData) => {
     cards.push(internCard);
 };
 const createEngineerCard = (engineerData) => {
-    engineerCard = `       
+    
+    const engineerCard = `       
     <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">${engineerData.engineerName}</h5>
@@ -146,7 +147,6 @@ const createEngineerCard = (engineerData) => {
     </div>`
     cards.push(engineerCard);
 };
-
 // create--------HTML excutes prompts and sends data to create cards
 function createManagerHTML () {
     inquirer
@@ -239,10 +239,6 @@ function init() {
     createManagerHTML()
 };
 
-module.exports = {
-    createEngineerHTML,
-    createInternHTML,
-    createManagerHTML,
-}
+module.exports = createEngineerCard
 
 init();
