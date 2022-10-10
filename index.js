@@ -131,7 +131,7 @@ const createInternCard = (internData) => {
       <h6 class="card-subtitle mb-2 text-muted">Intern</h6>
       <p class="card-text">${internData.internId}</p>
       <a href=""mailto:${internData.internEmail}">${internData.internEmail}</a>
-      <a href="#" class="card-text">${internData.internGit}</a>
+      <a href="https://github.com/${internData.internGit}" class="card-text">${internData.internGit}</a>
     </div>`
     cards.push(internCard);
     return internCard
@@ -145,7 +145,7 @@ const createEngineerCard = (engineerData) => {
       <h6 class="card-subtitle mb-2 text-muted">Engineer</h6>
       <p class="card-text">${engineerData.engineerId}</p>
       <a href="mailto:${engineerData.engineerEmail}">${engineerData.engineerEmail}</a>
-      <a href="#" class="card-text">${engineerData.engineerGit}</a>
+      <a href="https://github.com/${engineerData.engineerGit}" class="card-text">${engineerData.engineerGit}</a>
     </div>`
     cards.push(engineerCard);
     return engineerCard
