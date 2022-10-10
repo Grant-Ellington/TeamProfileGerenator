@@ -10,9 +10,9 @@ test("should HTML block to cards array", () => {
         engineerGit: 'g',
         engineerChoices: 'Intern'
       }
-    const createEngineerCard = createEngineerCard(array)
+    const test = createEngineerCard(array)
     
-    expect(createEngineerCard).toBe(
+    expect(test).toBe(
     `<div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">'g'</h5>
