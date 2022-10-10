@@ -120,6 +120,7 @@ const createManagerCard = (managerData) => {
       <a href="#" class="card-text">${managerData.managerOfficeNum}</a>
     </div>`
     cards.push(managerCard);
+    return managerCard
 };
 
 const createInternCard = (internData) => {
@@ -133,6 +134,7 @@ const createInternCard = (internData) => {
       <a href="#" class="card-text">${internData.internGit}</a>
     </div>`
     cards.push(internCard);
+    return internCard
 };
 const createEngineerCard = (engineerData) => {
     
@@ -146,7 +148,9 @@ const createEngineerCard = (engineerData) => {
       <a href="#" class="card-text">${engineerData.engineerGit}</a>
     </div>`
     cards.push(engineerCard);
+    return engineerCard
 };
+
 // create--------HTML excutes prompts and sends data to create cards
 function createManagerHTML () {
     inquirer
@@ -174,6 +178,7 @@ function createEngineerHTML () {
         .then((answers) => {
             const engineerData = answers;
             createEngineerCard(engineerData);
+            console.log(engineerData)
 
         if(engineerData.engineerChoices === 'Manager') {
             createManagerHTML()
@@ -193,6 +198,7 @@ function createInternHTML () {
         .then((answers) => {
             const internData = answers;
             createInternCard(internData);
+            console.log(internData)
 
             if(internData.internChoices === 'Manager') {
                 createManagerHTML()

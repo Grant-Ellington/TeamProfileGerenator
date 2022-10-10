@@ -4,15 +4,15 @@ const createEngineerCard = require('../index.js')
 
 test("should HTML block to cards array", () => {
     const array = {
-        managerName: 'g',
-        managerId: 'g',
-        managerEmail: 'g',
-        managerOfficeNum: 'g',
-        managerChoices: 'I am done adding team members.'
+        engineerName: 'g',
+        engineerId: 'g',
+        engineerEmail: 'g',
+        engineerGit: 'g',
+        engineerChoices: 'Intern'
       }
-    const engineerCard = createEngineerCard(array)
+    const createEngineerCard = createEngineerCard(array)
     
-    expect(engineerCard).toEqual(
+    expect(createEngineerCard).toBe(
     `<div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">'g'</h5>
