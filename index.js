@@ -26,7 +26,7 @@ const managerQuestions = [
     {
         type: 'input',
         name: 'managerOfficeNum',
-        message:"What is the manager's name?",
+        message:"What is the manager's office number?",
     },
     {
         type: 'list',
@@ -116,7 +116,7 @@ const createManagerCard = (managerData) => {
       <h5 class="card-title">${managerData.managerName}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Manager</h6>
       <p class="card-text">${managerData.managerId}</p>
-      <a href=""mailto:${managerData.managerEmail}?subject = Feedback&body = Message">${managerData.managerEmail}</a>
+      <a href=""mailto:${managerData.managerEmail} = Feedback&body = Message">${managerData.managerEmail}</a>
       <a href="#" class="card-text">${managerData.managerOfficeNum}</a>
     </div>`
     cards.push(managerCard);
