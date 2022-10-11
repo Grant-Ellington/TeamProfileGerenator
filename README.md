@@ -62,9 +62,11 @@ Below shows the function that runs through the prompted questions, then takses t
 The below function takes the answers, adds them to a template literal, and then takes the HTML block and adds it to the cards array.
 ![something](./img/createManagerCard.png)
 
-Below shows the functio which generates the HTML fu
-
-https://user-images.githubusercontent.com/109107643/195157079-a4efa85c-70d6-4a21-99fe-8f6ab7f71b8e.mov
-
-nction.
+Below shows the functio which generates the HTML function.
 ![something](./img/createFile.png)
+
+
+
+
+https://user-images.githubusercontent.com/109107643/195157353-62b9af80-3e05-4455-88be-89b5dd623cb7.mov
+
